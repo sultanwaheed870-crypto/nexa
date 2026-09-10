@@ -1,0 +1,49 @@
+{
+  "name": "nexa",
+  "version": "0.1.0",
+  "description": "High-Performance Local-First Discord AI Bot - Self-Hosted, Modular, Extensible",
+  "type": "module",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node --loader ts-node/esm src/main.ts",
+    "start": "node dist/main.js",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "test": "node --loader ts-node/esm --test tests/**/*.test.ts",
+    "test:watch": "node --loader ts-node/esm --test --watch tests/**/*.test.ts",
+    "clean": "rm -rf dist",
+    "clean:data": "rm -rf data",
+    "reset": "npm run clean && npm run clean:data"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "ai",
+    "local-first",
+    "self-hosted",
+    "high-performance",
+    "modular"
+  ],
+  "author": "NEXA Team",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "better-sqlite3": "^9.2.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
